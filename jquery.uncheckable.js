@@ -1,3 +1,8 @@
+/**
+ * @file jQuery plugin that adds functionality to uncheck a radio button.
+ * @author Renaat De Muynck <renaat.demuynck@gmail.com>
+ * @license MIT
+ */
 
 $.fn.uncheckable = function () {
     this.each(function () {

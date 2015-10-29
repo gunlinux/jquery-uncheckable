@@ -17,8 +17,8 @@ $.fn.uncheckable = function () {
         label.mouseup(function (e) {
             
             // Attach a one-time click handler to the radio button
-            // *only* if the state is 'checked'
-            if (radio.prop('checked')) {
+            // *only* if the state is 'checked' and the left mouse button was used
+            if (radio.prop('checked') && e.which === 1) {
                 radio.one('click', function () {
                     radio.prop('checked', false);
                 });

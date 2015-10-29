@@ -10,8 +10,10 @@
         $(function () {
             
             // Show event info for debugging
-            $('input[type="radio"]').on('mousedown mouseup click change', function (e) {
-                console.log(e.target.tagName, e.type, $(e.target).prop('checked'));
+            $('input[type="radio"], label').on('mousedown mouseup click dblclick change', function (e) {
+                var radio = e.target.tagName === 'LABEL' ? $(e.target).find('input[type="radio"]') : $(e.target);
+                
+                console.log(e.target.tagName, e.type, radio.prop('checked'));
             });
             
             // Apply the plugin to all radio buttons
@@ -24,10 +26,17 @@
     <h1>jQuery Uncheckable</h1>
     
     <fieldset>
-        <legend>Radio group 1</legend>
-        <input type="radio" name="radio1" checked="checked" />
-        <input type="radio" name="radio1" />
-        <input type="radio" name="radio1" />
+        <legend>Radio group 1 (no labels)</legend>
+        1<input type="radio" name="radio1" checked="checked" />
+        2<input type="radio" name="radio1" />
+        3<input type="radio" name="radio1" />
+    </fieldset>
+    
+    <fieldset>
+        <legend>Radio group 2 (with labels)</legend>
+        <label>1<input type="radio" name="radio2" checked="checked" /></label>
+        <label>2<input type="radio" name="radio2" /></label>
+        <label>3<input type="radio" name="radio2" /></label>
     </fieldset>
     
     <fieldset>

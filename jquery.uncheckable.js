@@ -9,15 +9,18 @@ $.fn.uncheckable = function () {
         
         'use strict';
         
-        // Capture MOUSEUP event 
+        var radio = $(this),
+            label = radio.closest('label').length === 1 ? radio.closest('label') : radio;
+        
+        // Capture MOUSEUP event on radio button or its label
         // At this point we know the current state of the radio button
-        $(this).mouseup(function () {
+        label.mouseup(function (e) {
             
             // Attach a one-time click handler to the radio button
             // *only* if the state is 'checked'
-            if ($(this).prop('checked')) {
-                $(this).one('click', function () {
-                    $(this).prop('checked', false);
+            if (radio.prop('checked')) {
+                radio.one('click', function () {
+                    radio.prop('checked', false);
                 });
             }
         });

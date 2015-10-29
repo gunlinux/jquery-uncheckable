@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Uncheckable</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="../jquery.uncheckable.js"></script>
+    <script>
+    
+        $(function () {
+            
+            // Show event info for debugging
+            $('input[type="radio"]').on('mousedown mouseup click change', function (e) {
+                console.log(e.target.tagName, e.type, $(e.target).prop('checked'));
+            });
+            
+            // Apply the plugin to all radio buttons
+            $('input[type="radio"]').uncheckable();
+        });
+        
+    </script>
+</head>
+<body>
+    <h1>jQuery Uncheckable</h1>
+    
+    <fieldset>
+        <legend>Radio group 1</legend>
+        <input type="radio" name="radio1" checked="checked" />
+        <input type="radio" name="radio1" />
+        <input type="radio" name="radio1" />
+    </fieldset>
+    
+    <fieldset>
+        <legend>Radio group 2</legend>
+        <input type="radio" name="radio2" checked="checked" />
+        <input type="radio" name="radio2" />
+        <input type="radio" name="radio2" />
+    </fieldset>
+    
+</body>
+</html>

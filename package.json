@@ -1,0 +1,23 @@
+{
+	"name": "jquery-uncheckable",
+	"description": "jQuery plugin that adds functionality to uncheck a radio button.",
+    "version": "1.0.0",
+	"license": "MIT",
+	"keywords": [
+		"jquery-plugin",
+		"ui",
+		"form"
+	],
+	"author": {
+		"name": "Renaat De Muynck",
+		"email": "renaat.demuynck@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/renaatdemuynck/jquery-uncheckable.git"
+	},
+	"main": "jquery.uncheckable.js",
+	"dependencies": {
+		"jquery": ">=1.7"
+	}
+}

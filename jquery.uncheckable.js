@@ -9,9 +9,9 @@ $.fn.uncheckable = function () {
         
         'use strict';
         
-        // Capture MOUSEDOWN event 
+        // Capture MOUSEUP event 
         // At this point we know the current state of the radio button
-        $(this).mousedown(function () {
+        $(this).mouseup(function () {
             
             // Attach a one-time click handler to the radio button
             // *only* if the state is 'checked'

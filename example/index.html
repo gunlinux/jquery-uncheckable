@@ -11,7 +11,17 @@
             
             // Show event info for debugging
             $('input[type="radio"], label').on('mousedown mouseup click dblclick change', function (e) {
-                var radio = e.target.tagName === 'LABEL' ? $(e.target).find('input[type="radio"]') : $(e.target);
+                var radio;
+                
+                if (e.target.tagName === 'LABEL') {
+                    if ($(e.target).attr('for')) {
+                        radio = $('#' + $(e.target).attr('for'));
+                    } else {
+                        radio = $(e.target).find('input[type="radio"]');
+                    }
+                } else {
+                    radio = $(e.target);
+                }
                 
                 console.log(e.target.tagName, e.type, radio.prop('checked'));
             });
@@ -33,17 +43,19 @@
     </fieldset>
     
     <fieldset>
-        <legend>Radio group 2 (with labels)</legend>
+        <legend>Radio group 2 (with surrounding labels)</legend>
         <label>1<input type="radio" name="radio2" checked="checked" /></label>
         <label>2<input type="radio" name="radio2" /></label>
         <label>3<input type="radio" name="radio2" /></label>
     </fieldset>
     
     <fieldset>
-        <legend>Radio group 2</legend>
-        <input type="radio" name="radio2" checked="checked" />
-        <input type="radio" name="radio2" />
-        <input type="radio" name="radio2" />
+        <legend>Radio group 3 (with separated labels)</legend>
+        <label for="radio3-1">1</label><input id="radio3-1" type="radio" name="radio3" checked="checked" />
+        <label for="radio3-2">2</label><input id="radio3-2" type="radio" name="radio3" />
+        <label for="radio3-3">3</label><input id="radio3-3" type="radio" name="radio3" />
+    </fieldset>
+    
     </fieldset>
     
 </body>

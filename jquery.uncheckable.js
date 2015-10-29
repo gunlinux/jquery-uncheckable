@@ -7,6 +7,8 @@
 $.fn.uncheckable = function () {
     this.each(function () {
         
+        'use strict';
+        
         // Capture MOUSEDOWN event 
         // At this point we know the current state of the radio button
         $(this).mousedown(function () {

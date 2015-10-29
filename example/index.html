@@ -31,6 +31,21 @@
         });
         
     </script>
+    <style>
+    
+        fieldset:hover label {
+            background-color: yellow;
+        }
+        
+        fieldset input[type="radio"]:hover {
+            outline: solid 1px blue;
+        }
+        
+        fieldset label:hover {
+            outline: solid 1px red;
+        }
+    
+    </style>
 </head>
 <body>
     <h1>jQuery Uncheckable</h1>
@@ -56,6 +71,26 @@
         <label for="radio3-3">3</label><input id="radio3-3" type="radio" name="radio3" />
     </fieldset>
     
+    <fieldset>
+        <legend>Radio group 4 (with multiple separated labels)</legend>
+        <label for="radio4-1">1</label><input id="radio4-1" type="radio" name="radio4" checked="checked" />
+        <label for="radio4-2">2</label><input id="radio4-2" type="radio" name="radio4" />
+        <label for="radio4-3">3</label><input id="radio4-3" type="radio" name="radio4" />
+        <hr />
+        <label for="radio4-1">Extra label for 1</label><br />
+        <label for="radio4-2">Extra label for 2</label><br />
+        <label for="radio4-3">Extra label for 3</label>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Radio group 5 (with surrounding labels and extra separated labels)</legend>
+        <label>1<input id="radio5-1" type="radio" name="radio5" checked="checked" /></label>
+        <label>2<input id="radio5-2" type="radio" name="radio5" /></label>
+        <label>3<input id="radio5-3" type="radio" name="radio5" /></label>
+        <hr />
+        <label for="radio5-1">Extra label for 1</label><br />
+        <label for="radio5-2">Extra label for 2</label><br />
+        <label for="radio5-3">Extra label for 3</label>
     </fieldset>
     
 </body>
